@@ -141,8 +141,8 @@ class Number:
         result = Number(numer=numer, denom=denom)
         return -result if self.sign != other.sign else result
 
-    def __truediv__(self, other):
-        if not isinstance(other, Number):
+    def __truediv__(self, other):         #При делении больших чисел в конце образуется
+        if not isinstance(other, Number): #цифра 1
             other = Number(num=other)
         assert other != 0
         maxlen2 = max(self.len2, other.len2)
@@ -211,9 +211,9 @@ class Number:
     def __bool__(self):
         return str(self) != "0.0"
     
+    #TODO:
+    #Деление с остатком, приведение объекта к примитивным типам
     
-
-    #def __sub__(self, other):
 a = Number(num = 2)
 b = Number(numer = [1, 2, 3], denom = [1, 9])
 c = Number(num = -3)
